@@ -2,7 +2,7 @@ NAME = fractol
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR)
-DEBUGFLAGS = -g3 -O0 -fsanitize=address
+DEBUGFLAGS = -g
 RM = rm
 RMFLAGS = -f
 
@@ -25,7 +25,7 @@ $(LIBFT):
 	$(MAKE) -C $(SRCS_DIR)
 
 debug: 
-	$(CC) $(CFLAGS) $(DEBUGFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) $(DEBUGFLAGS) $(OBJS) $(LIBFT) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 all: $(NAME)
 
