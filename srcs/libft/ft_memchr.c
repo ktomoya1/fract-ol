@@ -6,11 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 18:38:40 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/05/28 20:48:52 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:20:55 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

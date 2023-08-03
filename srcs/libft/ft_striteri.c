@@ -6,11 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 21:10:16 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/06/01 14:44:14 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:21:04 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

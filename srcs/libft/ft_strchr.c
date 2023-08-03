@@ -6,11 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:16:02 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/05/25 18:26:20 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:21:02 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

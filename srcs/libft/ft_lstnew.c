@@ -6,11 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 21:17:26 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/05/30 17:47:23 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:20:54 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 t_list	*ft_lstnew(void *content)
 {

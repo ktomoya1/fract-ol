@@ -6,11 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:48:07 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/05/28 20:17:04 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:21:10 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

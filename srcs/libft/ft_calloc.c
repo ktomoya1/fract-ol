@@ -6,11 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 13:37:24 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/05/27 17:39:13 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:20:48 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {

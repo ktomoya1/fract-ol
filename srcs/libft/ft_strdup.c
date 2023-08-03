@@ -6,11 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 12:56:46 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/05/26 14:54:43 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:21:03 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 char	*ft_strdup(const char *src)
 {

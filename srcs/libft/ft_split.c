@@ -6,11 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 20:55:50 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/06/26 21:57:37 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:21:00 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 static size_t	count_words(char const *s, char c)
 {

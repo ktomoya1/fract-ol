@@ -6,11 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:28:37 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/05/29 14:01:44 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:21:11 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 char	*ft_strtrim(char const *s, char const *set)
 {

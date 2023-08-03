@@ -6,11 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 21:03:57 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/05/27 18:40:22 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:21:00 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

@@ -6,11 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:26:10 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/05/25 18:24:47 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:21:14 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 int	ft_toupper(int c)
 {

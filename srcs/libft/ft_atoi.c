@@ -6,11 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 17:46:27 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/06/02 15:12:36 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:20:31 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 static int	plus_atoi(const char *str, int sign)
 {

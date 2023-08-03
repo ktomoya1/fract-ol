@@ -6,11 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 15:06:41 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/05/28 20:47:39 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/03 17:20:57 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
