@@ -1,24 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_mandelbrot_set.c                              :+:      :+:    :+:   */
+/*   draw_mandelbrot.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 18:15:53 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/05 18:39:32 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/05 19:31:15 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-void	draw_mandelbrot_set(t_data *img)
+static double	my_sqrt(double x)
+{
+	double	guess;
+	double	error;
+
+	guess = 1.0;
+	error = 0.0001;
+	while (guess * guess - x > error)
+		guess = (guess + x / guess) / 2.0;
+	return (guess);
+}
+
+static double	complex_abs(t_cx z)
+{
+	double	real_squared;
+	double	imag_squared;
+	double	sum;
+
+	real_squared = z.re * z.re;
+	imag_squared = z.im * z.im;
+	sum = real_squared + imag_squared;
+	return (my_sqrt(sum));
+}
+
+void	draw_mandelbrot(t_data *img)
 {
 	t_cx	c;
 	t_cx	z;
-	int			x;
-	int			y;
-	int			i;
+	int		x;
+	int		y;
+	int		i;
 
 	// copilot:
 	// 1.描画する領域の範囲を指定する
