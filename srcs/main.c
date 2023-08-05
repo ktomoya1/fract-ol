@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:38:58 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/03 19:24:33 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/05 19:32:44 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,42 +81,42 @@ void	draw_hexagon(t_data *img, int x0, int y0, int radius, int color)
     }
 }
 
-void	draw_mandelbrot(t_data *img, double x_min, double x_max,
-        double y_min, double y_max, int max_iter)
-{
-    int		x;
-    int		y;
-    double	c_re;
-    double	c_im;
-    double	z_re;
-    double	z_im;
-    double	z_re_new;
-    double	z_im_new;
-    int		iter;
-    int		color;
+// void	draw_mandelbrot(t_data *img, double x_min, double x_max,
+//         double y_min, double y_max, int max_iter)
+// {
+//     int		x;
+//     int		y;
+//     double	c_re;
+//     double	c_im;
+//     double	z_re;
+//     double	z_im;
+//     double	z_re_new;
+//     double	z_im_new;
+//     int		iter;
+//     int		color;
 
-    for (y = 0; y < img->height; y++)
-    {
-        for (x = 0; x < img->width; x++)
-        {
-            c_re = x_min + (x * (x_max - x_min) / img->width);
-            c_im = y_min + (y * (y_max - y_min) / img->height);
-            z_re = 0;
-            z_im = 0;
-            iter = 0;
-            while (z_re * z_re + z_im * z_im <= 4 && iter < max_iter)
-            {
-                z_re_new = z_re * z_re - z_im * z_im + c_re;
-                z_im_new = 2 * z_re * z_im + c_im;
-                z_re = z_re_new;
-                z_im = z_im_new;
-                iter++;
-            }
-            color = (iter == max_iter) ? 0x000000 : 0xFFFFFF;
-            my_mlx_pixel_put(img, x, y, color);
-        }
-    }
-}
+//     for (y = 0; y < img->height; y++)
+//     {
+//         for (x = 0; x < img->width; x++)
+//         {
+//             c_re = x_min + (x * (x_max - x_min) / img->width);
+//             c_im = y_min + (y * (y_max - y_min) / img->height);
+//             z_re = 0;
+//             z_im = 0;
+//             iter = 0;
+//             while (z_re * z_re + z_im * z_im <= 4 && iter < max_iter)
+//             {
+//                 z_re_new = z_re * z_re - z_im * z_im + c_re;
+//                 z_im_new = 2 * z_re * z_im + c_im;
+//                 z_re = z_re_new;
+//                 z_im = z_im_new;
+//                 iter++;
+//             }
+//             color = (iter == max_iter) ? 0x000000 : 0xFFFFFF;
+//             my_mlx_pixel_put(img, x, y, color);
+//         }
+//     }
+// }
 
 int	main(void)
 {
@@ -143,8 +143,8 @@ int	main(void)
 	// 	y++;
 	// }
 	// draw_circle(&img, 960, 540, 100, 0x00FF0000);
-	draw_mandelbrot(&img, -2.5, 1.5, -2.0, 2.0, 100);
 	// draw_hexagon(&img, 960, 540, 100, 0x00FF0000);
+    draw_mandelbrot(&img);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
 }
