@@ -39,7 +39,7 @@ fclean: clean
 
 re: fclean all
 
-debug: 
+debug: $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(DEBUGFLAGS) $(OBJS) $(LIBFT) -L$(SRCS_DIR)/mlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 .PHONY: all clean fclean re debug
