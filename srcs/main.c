@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:38:58 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/05 19:32:44 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/06 20:07:43 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,67 +18,6 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int *)dst = color;
-}
-
-void	draw_circle(t_data *img, int x0, int y0, int radius, int color)
-{
-    int	x = radius;
-    int	y = 0;
-    int	err = 0;
-
-    while (x >= y)
-    {
-        my_mlx_pixel_put(img, x0 + x, y0 + y, color);
-        my_mlx_pixel_put(img, x0 + y, y0 + x, color);
-        my_mlx_pixel_put(img, x0 - y, y0 + x, color);
-        my_mlx_pixel_put(img, x0 - x, y0 + y, color);
-        my_mlx_pixel_put(img, x0 - x, y0 - y, color);
-        my_mlx_pixel_put(img, x0 - y, y0 - x, color);
-        my_mlx_pixel_put(img, x0 + y, y0 - x, color);
-        my_mlx_pixel_put(img, x0 + x, y0 - y, color);
-
-        if (err <= 0)
-        {
-            y += 1;
-            err += 2 * y + 1;
-        }
-        if (err > 0)
-        {
-            x -= 1;
-            err -= 2 * x + 1;
-        }
-    }
-}
-
-void	draw_hexagon(t_data *img, int x0, int y0, int radius, int color)
-{
-    int	x = radius;
-    int	y = 0;
-    int	err = 0;
-    int	i;
-
-    for (i = 0; i < 6; i++)
-    {
-        my_mlx_pixel_put(img, x0 + x, y0 + y, color);
-        my_mlx_pixel_put(img, x0 + y, y0 + x, color);
-        my_mlx_pixel_put(img, x0 - y, y0 + x, color);
-        my_mlx_pixel_put(img, x0 - x, y0 + y, color);
-        my_mlx_pixel_put(img, x0 - x, y0 - y, color);
-        my_mlx_pixel_put(img, x0 - y, y0 - x, color);
-        my_mlx_pixel_put(img, x0 + y, y0 - x, color);
-        my_mlx_pixel_put(img, x0 + x, y0 - y, color);
-
-        if (err <= 0)
-        {
-            y += 1;
-            err += 2 * y + 1;
-        }
-        if (err > 0)
-        {
-            x -= 1;
-            err -= 2 * x + 1;
-        }
-    }
 }
 
 // void	draw_mandelbrot(t_data *img, double x_min, double x_max,
@@ -131,19 +70,8 @@ int	main(void)
 	img.img = mlx_new_image(mlx, 1920, 1080);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 			&img.endian);
-	// y = 540;
-	// while (y < 640)
-	// {
-	// 	x = 960;
-	// 	while (x < 1060)
-	// 	{
-	// 		my_mlx_pixel_put(&img, x, y, 0x00FF0000);
-	// 		x++;
-	// 	}
-	// 	y++;
-	// }
-	// draw_circle(&img, 960, 540, 100, 0x00FF0000);
-	// draw_hexagon(&img, 960, 540, 100, 0x00FF0000);
+    img.height = 1080;
+    img.width = 1920;
     draw_mandelbrot(&img);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
