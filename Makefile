@@ -11,6 +11,9 @@ OBJS = $(SRCS:.c=.o)
 LIBFT_DIR = $(SRCS_DIR)/libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
+MLX_DIR = $(SRCS_DIR)/mlx
+LIBMLX = $(MLX_DIR)/libmlx.a
+
 INC_DIR = ./includes
 
 CC = cc
@@ -22,16 +25,20 @@ RMFLAGS = -f
 .c.o:
 	${CC} ${CFLAGS} -I$(SRCS_DIR)/mlx -c $< -o $@
 
-$(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -L$(SRCS_DIR)/mlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT) $(LIBMLX)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(LIBMLX) -L$(SRCS_DIR)/mlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
+
+$(LIBMLX):
+	$(MAKE) -C $(MLX_DIR)
 
 all: $(NAME)
 
 clean:
 	$(MAKE) fclean -C $(LIBFT_DIR)
+	$(MAKE) clean -C $(MLX_DIR)
 	$(RM) $(RMFLAGS) $(OBJS)
 
 fclean: clean
@@ -39,7 +46,7 @@ fclean: clean
 
 re: fclean all
 
-debug: $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(DEBUGFLAGS) $(OBJS) $(LIBFT) -L$(SRCS_DIR)/mlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+debug: $(OBJS) $(LIBFT) $(LIBMLX)
+	$(CC) $(CFLAGS) $(DEBUGFLAGS) $(OBJS) $(LIBFT) $(LIBMLX) -L$(SRCS_DIR)/mlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 .PHONY: all clean fclean re debug
