@@ -3,7 +3,8 @@ NAME = fractol
 SRCS_DIR = ./srcs
 SRCS_FILE = main.c \
 	calculate_complex_number.c \
-	draw_mandelbrot.c
+	draw_mandelbrot.c \
+	draw_julia.c \
 
 SRCS = $(addprefix $(SRCS_DIR)/, $(SRCS_FILE))
 OBJS = $(SRCS:.c=.o)
