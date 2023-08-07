@@ -6,23 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 18:15:53 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/05 19:31:15 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/07 16:55:49 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
-
-static double	my_sqrt(double x)
-{
-	double	guess;
-	double	error;
-
-	guess = 1.0;
-	error = 0.0001;
-	while (guess * guess - x > error)
-		guess = (guess + x / guess) / 2.0;
-	return (guess);
-}
 
 static double	complex_abs(t_cx z)
 {
@@ -33,7 +21,7 @@ static double	complex_abs(t_cx z)
 	real_squared = z.re * z.re;
 	imag_squared = z.im * z.im;
 	sum = real_squared + imag_squared;
-	return (my_sqrt(sum));
+	return (sqrt(sum));
 }
 
 void	draw_mandelbrot(t_data *img)
@@ -44,37 +32,33 @@ void	draw_mandelbrot(t_data *img)
 	int		y;
 	int		i;
 
-	// copilot:
 	// 1.描画する領域の範囲を指定する
-	// x_minからx_maxまでの範囲とy_minからy_maxまでの範囲を指定する
-	// x_min = -2.0, x_max = 2.0, y_min = -2.0, y_max = 2.0
-	x = 0;
 	y = 0;
-	i = 0;
 	img->x_min = -2.0;
 	img->x_max = 2.0;
 	img->y_min = -2.0;
 	img->y_max = 2.0;
-
 	while (y < img->height)
 	{
 		x = 0;
-		// 2.各点に対して複素数cを割り当てる
+		// 2. 各点に対して複素数cを割り当てる
 		// 画像の幅と高さを使用して、各点に対応する複素数cを計算する
 		while (x < img->width)
 		{
 			c.re = img->x_min + x * (img->x_max - img->x_min) / img->width;
 			c.im = img->y_min + y * (img->y_max - img->y_min) / img->height;
-			// 3.zを0に設定する
+			// 3. zを0に設定する
 			z.re = 0;
 			z.im = 0;
-			// 4.複素数zがマンデルブロ集合に属するかどうかを判定する
+			// 4. zがマンデルブロ集合に属するかどうかを判定する
 			// z = z^2 + c を繰り返し適用し、zの絶対値が2を超えたら、その点はマンデルブロ集合に属さないと判定する
+			i = 0;
 			while (i < MAX_ITERATIONS)
 			{
 				z = add_complex(mul_complex(z, z), c);
 				if (complex_abs(z) > 2.0)
 					break ;
+				i++;
 			}
 			// 5.zがマンデルブロ集合に属する場合は、黒色、属さない場合は白色で点を描画する
 			if (i == MAX_ITERATIONS)
