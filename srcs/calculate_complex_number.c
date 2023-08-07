@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:25:44 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/05 18:38:51 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/07 19:30:30 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,16 @@ t_cx	div_complex(t_cx a, t_cx b)
 	result.re = (a.re * b.re + a.im * b.im) / denominator;
 	result.im = (a.im * b.re - a.re * b.im) / denominator;
 	return (result);
+}
+
+double	complex_abs(t_cx z)
+{
+	double	real_squared;
+	double	imag_squared;
+	double	sum;
+
+	real_squared = z.re * z.re;
+	imag_squared = z.im * z.im;
+	sum = real_squared + imag_squared;
+	return (sqrt(sum));
 }

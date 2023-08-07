@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:21:36 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/07 16:42:12 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/07 19:31:04 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ t_cx	add_complex(t_cx a, t_cx b);
 t_cx	sub_complex(t_cx a, t_cx b);
 t_cx	mul_complex(t_cx a, t_cx b);
 t_cx	div_complex(t_cx a, t_cx b);
+double	complex_abs(t_cx z);
 
 #endif

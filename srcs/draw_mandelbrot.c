@@ -6,23 +6,11 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 18:15:53 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/07 19:02:09 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/07 19:29:58 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
-
-static double	complex_abs(t_cx z)
-{
-	double	real_squared;
-	double	imag_squared;
-	double	sum;
-
-	real_squared = z.re * z.re;
-	imag_squared = z.im * z.im;
-	sum = real_squared + imag_squared;
-	return (sqrt(sum));
-}
 
 void	draw_mandelbrot(t_data *img)
 {
