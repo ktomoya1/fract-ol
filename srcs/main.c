@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:38:58 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/07 17:08:11 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/07 19:51:05 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ int	main(void)
 			&img.endian);
     img.height = 1080;
     img.width = 1920;
-    draw_mandelbrot(&img);
+    // draw_mandelbrot(&img);
+	draw_julia(&img);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
 }

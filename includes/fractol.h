@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:21:36 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/07 19:31:04 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/07 19:32:56 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_complex
 }	t_cx;
 
 void	draw_mandelbrot(t_data *img);
+void	draw_julia(t_data *img);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 t_cx	add_complex(t_cx a, t_cx b);
 t_cx	sub_complex(t_cx a, t_cx b);
