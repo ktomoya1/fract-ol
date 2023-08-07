@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 18:15:53 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/07 19:29:58 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/07 20:17:36 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	draw_mandelbrot(t_data *img)
 {
-	t_cx	c;
-	t_cx	z;
+	t_cmplx	c;
+	t_cmplx	z;
 	int		x;
 	int		y;
 	int		i;

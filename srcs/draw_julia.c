@@ -6,17 +6,17 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 19:27:47 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/07 19:50:30 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/07 20:17:33 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-// cの実部と虚部は外部から受け取る
+// cの実部と虚部は外部から受け取る:Todo
 void	draw_julia(t_data *img)
 {
-	t_cx	c;
-	t_cx	z;
+	t_cmplx	c;
+	t_cmplx	z;
 	int		x;
 	int		y;
 	int		i;
