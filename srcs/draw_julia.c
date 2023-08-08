@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 19:27:47 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/07 20:17:33 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/08 16:15:24 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ void	draw_julia(t_data *img)
 	img->y_max = 2.0;
 	c.re = -0.8;
 	c.im = 0.156;
-	while (y < img->height)
+	while (y < HEIGHT)
 	{
 		x = 0;
-		while (x < img->width)
+		while (x < WIDTH)
 		{
-			z.re = img->x_min + x * (img->x_max - img->x_min) / img->width;
-			z.im = img->y_min + y * (img->y_max - img->y_min) / img->height;
+			z.re = img->x_min + x * (img->x_max - img->x_min) / WIDTH;
+			z.im = img->y_min + y * (img->y_max - img->y_min) / HEIGHT;
 			i = 0;
 			while (i < MAX_ITERATIONS)
 			{

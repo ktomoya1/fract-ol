@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:21:36 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/07 20:17:03 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/08 16:24:25 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <math.h>
 
 # define MAX_ITERATIONS 100
+# define WIDTH 1920
+# define HEIGHT 1080
 
 typedef struct s_data
 {
@@ -26,8 +28,6 @@ typedef struct s_data
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-	int		width;
-	int		height;
 	double	x_min;
 	double	x_max;
 	double	y_min;
