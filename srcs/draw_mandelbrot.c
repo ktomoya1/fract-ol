@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 18:15:53 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/08 16:17:37 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:49:14 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	draw_mandelbrot(t_data *img)
 		x = 0;
 		while (x < WIDTH)
 		{
-			c.re = img->x_min + x * (img->x_max - img->x_min) / WIDTH;
+			c.re = img->x_min + x * (img->x_max - img->x_min) / WIDTH - 0.285;
 			c.im = img->y_min + y * (img->y_max - img->y_min) / HEIGHT;
 			z.re = 0;
 			z.im = 0;
