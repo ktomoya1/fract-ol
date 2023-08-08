@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:21:36 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/08 17:42:42 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/08 18:15:00 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@ typedef struct s_complex
 	double		im;
 }	t_cmplx;
 
+typedef enum e_color
+{
+	BLACK = 0x000000,
+	RED = 0xFF0000,
+	YELLOW = 0xFFFF00,
+	WHITE = 0xFFFFFF,
+}	t_color;
+
 void	draw_mandelbrot(t_data *img);
 void	draw_julia(t_data *img);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
@@ -48,5 +56,6 @@ t_cmplx	sub_complex(t_cmplx a, t_cmplx b);
 t_cmplx	mul_complex(t_cmplx a, t_cmplx b);
 t_cmplx	div_complex(t_cmplx a, t_cmplx b);
 double	complex_abs(t_cmplx z);
+t_color	get_color(int iter);
 
 #endif

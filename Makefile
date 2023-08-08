@@ -5,6 +5,7 @@ SRCS_FILE = main.c \
 	calculate_complex_number.c \
 	draw_mandelbrot.c \
 	draw_julia.c \
+	fractol_utils.c \
 
 SRCS = $(addprefix $(SRCS_DIR)/, $(SRCS_FILE))
 OBJS = $(SRCS:.c=.o)
