@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:21:36 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/08 16:24:25 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/08 17:42:42 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <math.h>
 
 # define MAX_ITERATIONS 100
-# define WIDTH 1920
+# define WIDTH 1080
 # define HEIGHT 1080
 
 typedef struct s_data
