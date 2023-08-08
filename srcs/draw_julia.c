@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 19:27:47 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/08 16:15:24 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/08 18:22:32 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	draw_julia(t_data *img)
 {
 	t_cmplx	c;
 	t_cmplx	z;
+	t_color	color;
 	int		x;
 	int		y;
 	int		i;
@@ -43,10 +44,8 @@ void	draw_julia(t_data *img)
 					break ;
 				i++;
 			}
-			if (i == MAX_ITERATIONS)
-				my_mlx_pixel_put(img, x, y, 0x000000);
-			else
-				my_mlx_pixel_put(img, x, y, 0x0000FF);
+			color = get_color(i);
+			my_mlx_pixel_put(img, x, y, color);
 			x++;
 		}
 		y++;
