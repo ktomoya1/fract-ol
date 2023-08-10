@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:38:58 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/10 20:15:16 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/10 20:16:38 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,6 @@ int	main(void)
 	draw_mandelbrot(&data);
 	// draw_julia(&data);
 	mlx_put_image_to_window(data.mlx, data.win, data.img, 0, 0);
-	// mlx_mouse_hook(data.win, mouse_scroll, &data);
-	// mlx_mouse_move(data.win, mouse_move, &data);
 	mlx_hook(data.win, 4, 0, mouse_scroll, &data);
 	mlx_key_hook(data.win, esc_close, &data);
 	mlx_hook(data.win, 17, 0, exit_on_close, &data);
