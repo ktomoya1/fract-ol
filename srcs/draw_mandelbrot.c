@@ -6,13 +6,13 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 18:15:53 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/09 20:05:13 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/09 20:15:08 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-void	draw_mandelbrot(t_vars *img, t_range range)
+void	draw_mandelbrot(t_vars *data, t_range range)
 {
 	t_cmplx	c;
 	t_cmplx	z;
@@ -40,7 +40,7 @@ void	draw_mandelbrot(t_vars *img, t_range range)
 				i++;
 			}
 			color = get_color(i);
-			my_mlx_pixel_put(img, x, y, color);
+			my_mlx_pixel_put(data, x, y, color);
 			x++;
 		}
 		y++;
