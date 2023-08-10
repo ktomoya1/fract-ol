@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kudoutomoya <kudoutomoya@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:21:36 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/10 15:43:05 by kudoutomoya      ###   ########.fr       */
+/*   Updated: 2023/08/10 18:09:39 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include <math.h>
 
 # define MAX_ITERATIONS 100
-# define WIDTH 1080
-# define HEIGHT 1080
+# define WIDTH 500
+# define HEIGHT 500
 
 typedef struct s_vars
 {
@@ -30,8 +30,6 @@ typedef struct s_vars
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-	int		x;
-	int		y;
 }	t_vars;
 
 typedef struct s_range

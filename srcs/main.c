@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kudoutomoya <kudoutomoya@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:38:58 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/10 15:45:10 by kudoutomoya      ###   ########.fr       */
+/*   Updated: 2023/08/10 18:27:07 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ void	my_mlx_pixel_put(t_vars *data, int x, int y, int color)
 int	esc_close(int keycode, t_vars *data)
 {
 	if (keycode == 53)
+	{
 		mlx_destroy_window(data->mlx, data->win);
-	exit(0);
+		exit(0);
+	}
+	return (0);
 }
 
 int exit_on_close(t_vars *data)
@@ -33,19 +36,27 @@ int exit_on_close(t_vars *data)
 	exit(0);
 }
 
-// int	mouse_scroll()
-
-int	mouse_move(t_vars *data)
+int	mouse_scroll(int button, int x, int y, t_vars *data)
 {
-	printf("Mouse moved to (%d, %d)\n", data->x, data->y);
+	(void)data;
+	if (button == 4)
+	{
+		printf("Scrolling up | x: %d | y: %d\n", x, y);
+	}
+	else if (button == 5)
+	{
+		printf("Scrolling down | x: %d | y: %d\n", x, y);
+	}
 	return (0);
 }
 
-// int	key_press(int keycode, void *param)
+// int	key_press(int keycode, t_vars *param)
 // {
 //     (void)param;
 //     if (keycode == 53) // 53 is the keycode for ESC key
 //         printf("ESC key is pressed!\n");
+// 	else
+// 		printf("keycode: %d\n", keycode);
 //     return (0);
 // }
 
@@ -67,10 +78,10 @@ int	main(void)
 	draw_julia(&data, range);
 	mlx_put_image_to_window(data.mlx, data.win, data.img, 0, 0);
 	// mlx_mouse_hook(data.win, mouse_scroll, &data);
-	mlx_mouse_move(data.win, mouse_move, &data);
+	// mlx_mouse_move(data.win, mouse_move, &data);
+	mlx_hook(data.win, 4, 0, mouse_scroll, &data);
 	mlx_key_hook(data.win, esc_close, &data);
 	mlx_hook(data.win, 17, 0, exit_on_close, &data);
-	
 	// mlx_hook(mlx_win, 33, 1L << 0, close_window(mlx_key_hook(mlx_win, key_press, NULL), NULL);
 	mlx_loop(data.mlx);
 }
