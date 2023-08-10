@@ -49,7 +49,7 @@ fclean: clean
 re: fclean all
 
 ifeq ($(MAKECMDGOALS), debug)
-CFLAGS += -g3 -O0
+CFLAGS += -g3 -O0 -fsanitize=address
 endif
 
 debug: re
