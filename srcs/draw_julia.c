@@ -6,14 +6,14 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 19:27:47 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/08 18:22:32 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/09 20:16:00 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
 // cの実部と虚部は外部から受け取る:Todo
-void	draw_julia(t_data *img)
+void	draw_julia(t_vars *data, t_range range)
 {
 	t_cmplx	c;
 	t_cmplx	z;
@@ -23,10 +23,6 @@ void	draw_julia(t_data *img)
 	int		i;
 
 	y = 0;
-	img->x_min = -2.0;
-	img->x_max = 2.0;
-	img->y_min = -2.0;
-	img->y_max = 2.0;
 	c.re = -0.8;
 	c.im = 0.156;
 	while (y < HEIGHT)
@@ -34,8 +30,8 @@ void	draw_julia(t_data *img)
 		x = 0;
 		while (x < WIDTH)
 		{
-			z.re = img->x_min + x * (img->x_max - img->x_min) / WIDTH;
-			z.im = img->y_min + y * (img->y_max - img->y_min) / HEIGHT;
+			z.re = range.x_min + x * (range.x_max - range.x_min) / WIDTH;
+			z.im = range.y_min + y * (range.y_max - range.y_min) / HEIGHT;
 			i = 0;
 			while (i < MAX_ITERATIONS)
 			{
@@ -45,7 +41,7 @@ void	draw_julia(t_data *img)
 				i++;
 			}
 			color = get_color(i);
-			my_mlx_pixel_put(img, x, y, color);
+			my_mlx_pixel_put(data, x, y, color);
 			x++;
 		}
 		y++;
