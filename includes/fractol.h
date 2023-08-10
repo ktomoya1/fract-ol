@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:21:36 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/10 18:09:39 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/10 19:33:12 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,11 @@ typedef struct s_vars
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}	t_vars;
-
-typedef struct s_range
-{
 	double	x_min;
 	double	x_max;
 	double	y_min;
 	double	y_max;
-}	t_range;
+}	t_vars;
 
 typedef struct s_complex
 {
@@ -54,8 +50,8 @@ typedef enum e_color
 	WHITE = 0xFFFFFF,
 }	t_color;
 
-void	draw_mandelbrot(t_vars *data, t_range range);
-void	draw_julia(t_vars *data, t_range range);
+void	draw_mandelbrot(t_vars *data);
+void	draw_julia(t_vars *data);
 void	my_mlx_pixel_put(t_vars *data, int x, int y, int color);
 t_cmplx	add_complex(t_cmplx a, t_cmplx b);
 t_cmplx	sub_complex(t_cmplx a, t_cmplx b);

@@ -6,13 +6,13 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 18:15:53 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/09 20:15:08 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/10 19:10:04 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-void	draw_mandelbrot(t_vars *data, t_range range)
+void	draw_mandelbrot(t_vars *data)
 {
 	t_cmplx	c;
 	t_cmplx	z;
@@ -27,8 +27,8 @@ void	draw_mandelbrot(t_vars *data, t_range range)
 		x = 0;
 		while (x < WIDTH)
 		{
-			c.re = range.x_min + x * (range.x_max - range.x_min) / WIDTH - 0.285;
-			c.im = range.y_min + y * (range.y_max - range.y_min) / HEIGHT;
+			c.re = data->x_min + x * (data->x_max - data->x_min) / WIDTH - 0.285;
+			c.im = data->y_min + y * (data->y_max - data->y_min) / HEIGHT;
 			z.re = 0;
 			z.im = 0;
 			i = 0;

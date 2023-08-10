@@ -6,14 +6,14 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 19:27:47 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/09 20:16:00 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/10 19:10:22 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
 // cの実部と虚部は外部から受け取る:Todo
-void	draw_julia(t_vars *data, t_range range)
+void	draw_julia(t_vars *data)
 {
 	t_cmplx	c;
 	t_cmplx	z;
@@ -30,8 +30,8 @@ void	draw_julia(t_vars *data, t_range range)
 		x = 0;
 		while (x < WIDTH)
 		{
-			z.re = range.x_min + x * (range.x_max - range.x_min) / WIDTH;
-			z.im = range.y_min + y * (range.y_max - range.y_min) / HEIGHT;
+			z.re = data->x_min + x * (data->x_max - data->x_min) / WIDTH;
+			z.im = data->y_min + y * (data->y_max - data->y_min) / HEIGHT;
 			i = 0;
 			while (i < MAX_ITERATIONS)
 			{
