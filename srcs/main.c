@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:38:58 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/10 19:08:08 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/10 20:15:16 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,41 @@ int	exit_on_close(t_vars *data)
 	exit(0);
 }
 
-// int	mouse_scroll(int button, int x, int y, t_vars *data)
-// {
-// 	double	center_x;
-// 	double	center_y;
+int	mouse_scroll(int button, int x, int y, t_vars *data)
+{
+	double	center_x;
+	double	center_y;
 
-// 	(void)x;
-// 	(void)y;
-// 	// 拡大率を調整する
-// 	data->zoom *= 1.1;
-
-// 	// 中心座標を計算する
-// 	center_x = 
-// 	if (button == 4)
-// 	{
-// 		printf("Scrolling up | x: %d | y: %d\n", x, y);
-// 	}
-// 	else if (button == 5)
-// 	{
-// 		printf("Scrolling down | x: %d | y: %d\n", x, y);
-// 	}
-// 	return (0);
-// }
+	(void)x;
+	(void)y;
+	if (button == 4)
+	{
+		// 拡大率を調整する
+		// 中心座標を計算する
+		center_x = data->x_min + (data->x_max - data->x_min) / 2;
+		center_y = data->y_min + (data->y_max - data->y_min) / 2;
+		// 中心座標を基準に、画像を拡大する(描画範囲の更新)
+		data->x_min = center_x - (center_x - data->x_min) * 1.1;
+		data->x_max = center_x + (data->x_max - center_x) * 1.1;
+		data->y_min = center_y - (center_y - data->y_min) * 1.1;
+		data->y_max = center_y + (data->y_max - center_y) * 1.1;
+		// 拡大した画像を再描画する
+		draw_mandelbrot(data);
+		mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
+	}
+	else if (button == 5)
+	{
+		center_x = data->x_min + (data->x_max - data->x_min) / 2;
+		center_y = data->y_min + (data->y_max - data->y_min) / 2;
+		data->x_min = center_x - (center_x - data->x_min) / 1.1;
+		data->x_max = center_x + (data->x_max - center_x) / 1.1;
+		data->y_min = center_y - (center_y - data->y_min) / 1.1;
+		data->y_max = center_y + (data->y_max - center_y) / 1.1;
+		draw_mandelbrot(data);
+		mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
+	}
+	return (0);
+}
 
 // int	key_press(int keycode, t_vars *param)
 // {
@@ -82,12 +95,12 @@ int	main(void)
 	data.img = mlx_new_image(data.mlx, WIDTH, HEIGHT);
 	data.addr = mlx_get_data_addr(data.img, &data.bits_per_pixel, &data.line_length,
 			&data.endian);
-	// draw_mandelbrot(&data, range);
-	draw_julia(&data);
+	draw_mandelbrot(&data);
+	// draw_julia(&data);
 	mlx_put_image_to_window(data.mlx, data.win, data.img, 0, 0);
 	// mlx_mouse_hook(data.win, mouse_scroll, &data);
 	// mlx_mouse_move(data.win, mouse_move, &data);
-	// mlx_hook(data.win, 4, 0, mouse_scroll, &data);
+	mlx_hook(data.win, 4, 0, mouse_scroll, &data);
 	mlx_key_hook(data.win, esc_close, &data);
 	mlx_hook(data.win, 17, 0, exit_on_close, &data);
 	mlx_loop(data.mlx);
