@@ -3,28 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   fractol_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kudoutomoya <kudoutomoya@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:09:36 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/08 18:17:21 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/13 09:56:33 by kudoutomoya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
+#include "../includes/libft.h"
 
-t_color	get_color(int iter)
+int	put_error_exit(char *str)
 {
-	double	ratio;
+	ft_putstr_fd(str, STD_ERROR);
+	exit(EXIT_FAILURE);
+}
 
-	if (iter == MAX_ITERATIONS)
-		return (WHITE);
-	ratio = (double)iter / MAX_ITERATIONS;
-	if (ratio < 0.25)
-		return (BLACK);
-	else if (ratio < 0.5)
-		return (RED);
-	else if (ratio < 0.75)
-		return (YELLOW);
-	else
-		return (WHITE);
+bool	is_str_equal(const char *s1, const char *s2)
+{
+	if (ft_strlen(s1) != ft_strlen(s2))
+		return (false);
+	return (!ft_strncmp(s1, s2, ft_strlen(s1)));
 }

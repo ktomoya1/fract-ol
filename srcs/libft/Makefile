@@ -1,7 +1,7 @@
 NAME = libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I${INC_DIR}
+CFLAGS = -Wall -Wextra -Werror -g3 -O0 -I${INC_DIR}
 RM = rm
 RMFLAGS = -f
 AR = ar
@@ -14,6 +14,7 @@ SRCS = ./ft_isalpha.c \
 	./ft_isalnum.c \
 	./ft_isascii.c \
 	./ft_isprint.c \
+	./ft_isspace.c \
 	./ft_strlen.c \
 	./ft_memset.c \
 	./ft_bzero.c \
