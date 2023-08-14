@@ -6,13 +6,13 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 19:27:47 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/14 15:07:33 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/14 15:12:02 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-static t_color get_color(int iter)
+static t_color	get_color(int iter)
 {
 	double	ratio;
 
@@ -20,7 +20,7 @@ static t_color get_color(int iter)
 		return (WHITE);
 	ratio = (double)iter / MAX_ITERATIONS;
 	if (ratio < 0.25)
-		return (BLACK);
+		return (iter * 0x090000);
 	else if (ratio < 0.5)
 		return (RED);
 	else if (ratio < 0.75)
