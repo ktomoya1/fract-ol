@@ -3,49 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   draw_fractal.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kudoutomoya <kudoutomoya@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 19:27:47 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/14 12:00:48 by kudoutomoya      ###   ########.fr       */
+/*   Updated: 2023/08/14 15:07:33 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
-
-// static t_color	get_color(int iter)
-// {
-// 	double	ratio;
-
-// 	if (iter == MAX_ITERATIONS)
-// 		return (WHITE);
-// 	ratio = (double)iter / MAX_ITERATIONS;
-// 	if (ratio < 0.25)
-// 		return (iter * 100);
-// 	else if (ratio < 0.5)
-// 		return (RED);
-// 	else if (ratio < 0.75)
-// 		return (YELLOW);
-// 	else
-// 		return (WHITE);
-// }
-
-// typedef struct	s_color
-// {
-//     int			t;
-//     int			r;
-//     int			g;
-//     int			b;
-// }				t_color1;
-
-static t_color	get_color(int iter)
-{
-	
-}
-
-// unsigned int create_trgb(int t, int r, int g, int b)
-// {
-//     return (t << 24 | r << 16 | g << 8 | b);
-// }
 
 static t_color get_color(int iter)
 {
@@ -63,7 +28,6 @@ static t_color get_color(int iter)
 	else
 		return (WHITE);
 }
-
 
 static int	count_iterations(t_cmplx z, t_cmplx c)
 {
