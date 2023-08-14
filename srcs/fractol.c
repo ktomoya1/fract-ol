@@ -6,7 +6,7 @@
 /*   By: ktomoya <ktomoya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:38:58 by ktomoya           #+#    #+#             */
-/*   Updated: 2023/08/13 19:00:00 by ktomoya          ###   ########.fr       */
+/*   Updated: 2023/08/14 15:13:32 by ktomoya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,13 @@ int	fractol(int argc, char **argv)
 	return (0);
 }
 
-__attribute__((destructor)) static void destructor()
-{
-    system("leaks -q fractol");
-}
-
 int	main(int argc, char **argv)
 {
 	fractol(argc, argv);
 	return (0);
 }
+
+// __attribute__((destructor)) static void destructor()
+// {
+//     system("leaks -q fractol");
+// }
